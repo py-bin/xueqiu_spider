@@ -101,7 +101,7 @@ def html_parser(jsontxt):
     parser_txt = data_soup.text.replace('\xa0','')
     return parser_txt
 
-def main_craw(id_list):
+def main_craw(id_list=ids):
     for ID in id_list:
         url = 'https://xueqiu.com/statuses/comments.json'
         maxpage = json.loads(craw_html(url,0,ID))["maxPage"]
@@ -114,4 +114,4 @@ def main_craw(id_list):
         print('已全部爬取活动%s' % ID)
         time.sleep(600)
 if __name__ == '__main__':
-	main_craw(id_list=ids)
+	main_craw()

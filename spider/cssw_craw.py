@@ -21,6 +21,10 @@ ua = UserAgent()
 dt_now = datetime.now()
 
 def craw_html(myurl, page_n):
+'''
+因需要按照不同的排序抽取前100页
+craw_html()中paras的sort需要按照'relevance'，'reply'，'time'分别运行一次
+'''
     headers = {
         'User-Agent':ua.random,
         'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -99,6 +103,5 @@ def main_craw():
         for item in parse_onepage(html):
             mysqls.save_data(item)
         time.sleep(1 + float(random.randint(1, 100)) / 20)
-        
 if __name__ == '__main__':
 	main_craw()
