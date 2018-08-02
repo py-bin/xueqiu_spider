@@ -55,7 +55,7 @@ headers = {'Cookie':cookie,
 
 一个简单又有效的方法就是降低爬取频率，毕竟高频率的爬取对服务器也是一个考验，如果对速度的要求不是很高的话，建议把频率放慢一点，你好我好大家好！
 
-```
+```python
 import random
 import time
 time.sleep(6*random.random())
